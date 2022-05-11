@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">EvertecPlace</string>
+    <string name="description_shopping_history">Shopping history</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_name">Name</string>
+    <string name="helper_require">Required</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_phone">Telephone</string>
+    <string name="hint_card_number">Card number</string>
+    <string name="hint_expiration">MM / YY</string>
+    <string name="hint_cvc">CVC</string>
+    <string name="btn_buy">Process Payment</string>
+    <string name="action_settings">Settings</string>
+    <string name="products">Products</string>
+    <string name="content_description_search">products can you buy.</string>
+    <string name="info">Info</string>
+    <string name="content_description_information">Information App.</string>
+    <string name="history">Shopping history</string>
+</resources>
