@@ -5,28 +5,57 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.evertec.eplace.R
+import com.evertec.eplace.common.adapters.StockAdapter
+import com.evertec.eplace.common.dataAccess.OnCLickListener
+import com.evertec.eplace.common.entities.StockEntity
+import com.evertec.eplace.databinding.FragmentProductsBinding
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class ProductsFragment : Fragment(), OnCLickListener {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProductsFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ProductsFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var mBinding: FragmentProductsBinding
+
+    private lateinit var mStockAdapter: StockAdapter
+    private lateinit var mGridLayout: GridLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        mBinding = FragmentProductsBinding.inflate(layoutInflater)
+
+        setupRecyclerView()
+    }
+
+    private fun setupRecyclerView() {
+
+
+        mStockAdapter = StockAdapter(mutableListOf(), this)
+        val linearLayoutManager = LinearLayoutManager(requireContext())
+        linearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
+
+        mBinding.recyclerView.run {
+            setHasFixedSize(true)
+            layoutManager = linearLayoutManager
+            getStock()
+            adapter = mStockAdapter
+        }
+    }
+
+    private fun getStock() {
+
+        runBlocking {
+            val stock = mutableListOf(
+                StockEntity(1, "PS5", 600),
+                StockEntity(2, "Lavadora", 450),
+                StockEntity(3, "Plancha", 75),
+                StockEntity(4, "Nevera", 500),
+                StockEntity(5, "Comedor", 375),
+                StockEntity(6, "Cama", 275)
+            )
+            launch { mStockAdapter.setStock(stock) }
         }
     }
 
@@ -39,22 +68,12 @@ class ProductsFragment : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProductsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProductsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        private const val KEY_ID_PRODUCT = "KEY_ID_PRODUCT"
+    }
+
+    override fun onClick(productId: Long) {
+        val args = Bundle()
+
+        args.putLong(KEY_ID_PRODUCT, productId)
     }
 }

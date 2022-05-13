@@ -18,9 +18,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupView()
+    }
+
+    private fun setupView() {
         launchFragment(ProductsFragment())
         binding.fab.setOnClickListener { launchFragment(PaymentFragment()) }
-
 
         binding.bottomAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
@@ -45,5 +48,4 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
     }
-
 }
