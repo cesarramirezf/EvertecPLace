@@ -19,17 +19,6 @@ class ProductsAdapter(
 
     private lateinit var mContext: Context
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-        val binding = ItemProductBinding.bind(view)
-
-        fun setListener(productsEntity: ProductsEntity) {
-            with(binding.root) {
-                setOnClickListener { listener.onClick(productsEntity.id) }
-            }
-        }
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         mContext = parent.context
@@ -42,8 +31,11 @@ class ProductsAdapter(
 
         with(holder) {
             setListener(product)
-            binding.tvProductName.text = product.nameProduct
-            binding.tvProductPrice.text = product.priceProduct.toString()
+
+            with(binding) {
+                tvProductName.text = product.nameProduct
+                tvProductPrice.text = product.priceProduct.toString()
+            }
         }
     }
 
@@ -51,11 +43,17 @@ class ProductsAdapter(
 
     fun setProducts(products: MutableList<ProductsEntity>) {
         this.products = products
-        this.products.addAll(products)
         notifyDataSetChanged()
     }
 
-    fun getProducts() : MutableList<ProductsEntity> {
-        return this.products
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+        val binding = ItemProductBinding.bind(view)
+
+        fun setListener(productsEntity: ProductsEntity) {
+            with(binding.root) {
+                setOnClickListener { listener.onClick(productsEntity.id) }
+            }
+        }
     }
 }

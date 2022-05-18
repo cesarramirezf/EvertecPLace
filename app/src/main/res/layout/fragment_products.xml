@@ -7,22 +7,362 @@
     android:background="@color/white"
     tools:context=".view.fragments.ProductsFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:clipToPadding="false"
-            android:paddingHorizontal="@dimen/common_padding_min"
-            android:paddingBottom="@dimen/common_padding_min"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/item_product" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/common_padding_min">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_card_height"
+                android:layout_marginHorizontal="@dimen/common_padding_min"
+                android:layout_marginTop="@dimen/common_padding_min"
+                android:background="@color/white"
+                android:clickable="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/common_padding_min">
+
+                    <TextView
+                        android:id="@+id/tvProductName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="PS5"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintBottom_toTopOf="@id/tvProductPrice1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Product's name" />
+
+                    <TextView
+                        android:id="@+id/tvProductPrice1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="600"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintBottom_toTopOf="@id/btnBuyProduct1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductName1"
+                        tools:text="Price of product" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnBuyProduct1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_buy"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductPrice1" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_card_height"
+                android:layout_marginHorizontal="@dimen/common_padding_min"
+                android:layout_marginTop="@dimen/common_padding_min"
+                android:background="@color/white"
+                android:clickable="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/common_padding_min">
+
+                    <TextView
+                        android:id="@+id/tvProductName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="Lavadora"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintBottom_toTopOf="@id/tvProductPrice2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Product's name" />
+
+                    <TextView
+                        android:id="@+id/tvProductPrice2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="550"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintBottom_toTopOf="@id/btnBuyProduct2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductName2"
+                        tools:text="Price of product" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnBuyProduct2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_buy"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductPrice2" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_card_height"
+                android:layout_marginHorizontal="@dimen/common_padding_min"
+                android:layout_marginTop="@dimen/common_padding_min"
+                android:background="@color/white"
+                android:clickable="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/common_padding_min">
+
+                    <TextView
+                        android:id="@+id/tvProductName3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="Plancha"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintBottom_toTopOf="@id/tvProductPrice3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Product's name" />
+
+                    <TextView
+                        android:id="@+id/tvProductPrice3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="75"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintBottom_toTopOf="@id/btnBuyProduct3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductName3"
+                        tools:text="Price of product" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnBuyProduct3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_buy"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductPrice3" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_card_height"
+                android:layout_marginHorizontal="@dimen/common_padding_min"
+                android:layout_marginTop="@dimen/common_padding_min"
+                android:background="@color/white"
+                android:clickable="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/common_padding_min">
+
+                    <TextView
+                        android:id="@+id/tvProductName4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="Nevera"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintBottom_toTopOf="@id/tvProductPrice4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Product's name" />
+
+                    <TextView
+                        android:id="@+id/tvProductPrice4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="500"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintBottom_toTopOf="@id/btnBuyProduct4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductName4"
+                        tools:text="Price of product" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnBuyProduct4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_buy"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductPrice4" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_card_height"
+                android:layout_marginHorizontal="@dimen/common_padding_min"
+                android:layout_marginTop="@dimen/common_padding_min"
+                android:background="@color/white"
+                android:clickable="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/common_padding_min">
+
+                    <TextView
+                        android:id="@+id/tvProductName5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="Comedor"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintBottom_toTopOf="@id/tvProductPrice5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Product's name" />
+
+                    <TextView
+                        android:id="@+id/tvProductPrice5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="375"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintBottom_toTopOf="@id/btnBuyProduct5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductName5"
+                        tools:text="Price of product" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnBuyProduct5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_buy"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductPrice5" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/item_card_height"
+                android:layout_marginHorizontal="@dimen/common_padding_min"
+                android:layout_marginTop="@dimen/common_padding_min"
+                android:background="@color/white"
+                android:clickable="true">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/common_padding_min">
+
+                    <TextView
+                        android:id="@+id/tvProductName6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="Cama"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintBottom_toTopOf="@id/tvProductPrice6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Product's name" />
+
+                    <TextView
+                        android:id="@+id/tvProductPrice6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:text="275"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        app:layout_constraintBottom_toTopOf="@id/btnBuyProduct6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductName6"
+                        tools:text="Price of product" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnBuyProduct6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_buy"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductPrice6" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

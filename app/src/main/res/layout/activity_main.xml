@@ -7,16 +7,10 @@
     android:fitsSystemWindows="true"
     tools:context=".view.MainActivity">
 
-    <androidx.core.widget.NestedScrollView
+    <FrameLayout
+        android:id="@+id/containerMain"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="100dp"
-        android:clipToPadding="false">
-        <FrameLayout
-            android:id="@+id/containerMain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </androidx.core.widget.NestedScrollView>
+        android:layout_height="wrap_content" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottom_app_bar"
@@ -24,10 +18,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:keyboardNavigationCluster="true"
         app:fabAlignmentMode="end"
         app:fabAnimationMode="scale"
         app:hideOnScroll="true"
-        android:keyboardNavigationCluster="true"
         app:menu="@menu/bottom_menu" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -37,6 +31,6 @@
         android:layout_margin="@dimen/common_padding_default"
         android:contentDescription="@string/description_shopping_history"
         android:src="@drawable/ic_history"
-        app:layout_anchor="@id/bottom_app_bar"/>
+        app:layout_anchor="@id/bottom_app_bar" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
