@@ -37,23 +37,19 @@ class ProductsFragment : Fragment(), OnCLickListener {
 
     private fun setupView() {
 
-        mBinding.cvProductOne.setOnClickListener {
-            launchPaymentFragment()
-        }
+        mBinding.cvProductOne.setOnClickListener { launchPaymentFragment() }
 
-        mBinding.cvProductTwo.setOnClickListener {
-            launchPaymentFragment()
-        }
+        mBinding.btnBuyProduct1.setOnClickListener { launchPaymentFragment() }
 
-        mBinding.cvProductThree.setOnClickListener {
-            launchPaymentFragment()
-        }
+        mBinding.cvProductTwo.setOnClickListener { launchPaymentFragment() }
 
-        mBinding.cvProductFour.setOnClickListener { }
+        mBinding.cvProductThree.setOnClickListener { launchPaymentFragment() }
 
-        mBinding.cvProductFive.setOnClickListener { }
+        mBinding.cvProductFour.setOnClickListener { launchPaymentFragment()}
 
-        mBinding.cvProductSix.setOnClickListener { }
+        mBinding.cvProductFive.setOnClickListener { launchPaymentFragment()}
+
+        mBinding.cvProductSix.setOnClickListener { launchPaymentFragment()}
     }
 
     private fun launchPaymentFragment() {
