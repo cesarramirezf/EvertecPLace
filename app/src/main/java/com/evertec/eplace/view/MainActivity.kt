@@ -2,8 +2,10 @@ package com.evertec.eplace.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.fragment.app.Fragment
 import com.evertec.eplace.R
+import com.evertec.eplace.common.utils.Utilities
 import com.evertec.eplace.databinding.ActivityMainBinding
 import com.evertec.eplace.view.fragments.PaymentFragment
 import com.evertec.eplace.view.fragments.ProductsFragment
@@ -23,7 +25,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupView() {
         launchFragment(ProductsFragment())
-        binding.fab.setOnClickListener { launchFragment(PaymentFragment()) }
+        binding.fab.setOnClickListener {
+            launchFragment(PaymentFragment())
+            binding.bottomAppBar.visibility = View.INVISIBLE
+        }
 
         binding.bottomAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
@@ -47,5 +52,8 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.add(R.id.containerMain, fragment)
         fragmentTransaction.addToBackStack(null)
         fragmentTransaction.commit()
+
+        if (fragment == PaymentFragment()) binding.bottomAppBar.visibility = View.INVISIBLE
+        else binding.bottomAppBar.visibility = View.VISIBLE
     }
 }
