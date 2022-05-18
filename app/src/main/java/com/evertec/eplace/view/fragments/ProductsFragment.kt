@@ -22,6 +22,8 @@ class ProductsFragment : Fragment(), OnCLickListener {
         super.onCreate(savedInstanceState)
         mBinding = FragmentProductsBinding.inflate(layoutInflater)
 
+        setupView()
+
     }
 
     override fun onCreateView(
@@ -29,7 +31,37 @@ class ProductsFragment : Fragment(), OnCLickListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_products, container, false)
+    }
+
+    private fun setupView() {
+
+        mBinding.cvProductOne.setOnClickListener {
+            launchPaymentFragment()
+        }
+
+        mBinding.cvProductTwo.setOnClickListener {
+            launchPaymentFragment()
+        }
+
+        mBinding.cvProductThree.setOnClickListener {
+            launchPaymentFragment()
+        }
+
+        mBinding.cvProductFour.setOnClickListener { }
+
+        mBinding.cvProductFive.setOnClickListener { }
+
+        mBinding.cvProductSix.setOnClickListener { }
+    }
+
+    private fun launchPaymentFragment() {
+
+        val fragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.containerMain, PaymentFragment())
+            .addToBackStack(null)
+        fragmentTransaction.commit()
     }
 
     companion object {

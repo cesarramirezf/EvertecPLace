@@ -22,6 +22,9 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/item_card_height"
+                android:id="@+id/cvProductOne"
+                app:cardBackgroundColor="@color/gray"
+                android:elevation="@dimen/common_padding_middle"
                 android:layout_marginHorizontal="@dimen/common_padding_min"
                 android:layout_marginTop="@dimen/common_padding_min"
                 android:background="@color/white"
@@ -81,6 +84,9 @@
                 android:layout_height="@dimen/item_card_height"
                 android:layout_marginHorizontal="@dimen/common_padding_min"
                 android:layout_marginTop="@dimen/common_padding_min"
+                android:id="@+id/cvProductTwo"
+                app:cardBackgroundColor="@color/gray"
+                android:elevation="@dimen/common_padding_middle"
                 android:background="@color/white"
                 android:clickable="true">
 
@@ -124,6 +130,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/btn_buy"
+                        android:clickable="false"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -138,6 +145,9 @@
                 android:layout_height="@dimen/item_card_height"
                 android:layout_marginHorizontal="@dimen/common_padding_min"
                 android:layout_marginTop="@dimen/common_padding_min"
+                android:id="@+id/cvProductThree"
+                app:cardBackgroundColor="@color/gray"
+                android:elevation="@dimen/common_padding_middle"
                 android:background="@color/white"
                 android:clickable="true">
 
@@ -181,6 +191,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/btn_buy"
+                        android:clickable="false"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -195,6 +206,9 @@
                 android:layout_height="@dimen/item_card_height"
                 android:layout_marginHorizontal="@dimen/common_padding_min"
                 android:layout_marginTop="@dimen/common_padding_min"
+                android:id="@+id/cvProductFour"
+                app:cardBackgroundColor="@color/gray"
+                android:elevation="@dimen/common_padding_middle"
                 android:background="@color/white"
                 android:clickable="true">
 
@@ -238,6 +252,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/btn_buy"
+                        android:clickable="false"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -252,6 +267,9 @@
                 android:layout_height="@dimen/item_card_height"
                 android:layout_marginHorizontal="@dimen/common_padding_min"
                 android:layout_marginTop="@dimen/common_padding_min"
+                android:id="@+id/cvProductFive"
+                app:cardBackgroundColor="@color/gray"
+                android:elevation="@dimen/common_padding_middle"
                 android:background="@color/white"
                 android:clickable="true">
 
@@ -295,6 +313,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/btn_buy"
+                        android:clickable="false"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -304,12 +323,14 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/item_card_height"
                 android:layout_marginHorizontal="@dimen/common_padding_min"
                 android:layout_marginTop="@dimen/common_padding_min"
+                android:id="@+id/cvProductSix"
+                app:cardBackgroundColor="@color/gray"
+                android:elevation="@dimen/common_padding_middle"
                 android:background="@color/white"
                 android:clickable="true">
 
@@ -353,6 +374,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/btn_buy"
+                        android:clickable="false"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
