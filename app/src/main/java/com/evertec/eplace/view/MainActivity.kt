@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.evertec.eplace.R
 import com.evertec.eplace.common.utils.Utilities
 import com.evertec.eplace.databinding.ActivityMainBinding
+import com.evertec.eplace.view.fragments.InfoFragment
 import com.evertec.eplace.view.fragments.PaymentFragment
 import com.evertec.eplace.view.fragments.ProductsFragment
 import com.evertec.eplace.view.fragments.ResumeFragment
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.info -> {
-                    launchFragment(ResumeFragment())
+                    launchFragment(InfoFragment())
                     true
                 }
                 R.id.products -> {

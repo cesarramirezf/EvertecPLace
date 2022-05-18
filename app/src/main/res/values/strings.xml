@@ -12,6 +12,9 @@
     <string name="hint_cvc">CVC</string>
     <string name="btn_buy">Process Payment</string>
     <string name="action_settings">Settings</string>
+    <string name="info_title">Desarrollado por:</string>
+    <string name="info_name">Cesar Ramirez Filomena</string>
+    <string name="info_description">Para aplicar al cargo desarrollador movil, en Evertec - PlacetoPay.</string>
     <string name="products">Products</string>
     <string name="content_description_search">products can you buy.</string>
     <string name="info">Info</string>
